@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Teer Hub — Live Shillong Teer Results</title>
+<meta name="description" content="Teer Hub — Live Shillong Teer results, predictions, archive and dream chart. Mobile-first and fast." />
+<link href="https://cdn.tailwindcss.com" rel="stylesheet">
+<link rel="icon" href="./img/logo.svg">
+<link rel="stylesheet" href="./css/styles.css">
+</head>
+<body class="bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100">
+  <div class="max-w-3xl mx-auto p-4">
+    <header class="flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <img src="./img/logo.svg" alt="Teer Hub" class="w-10 h-10"/>
+        <div>
+          <h1 class="font-extrabold text-xl text-[#004aad]">Teer Hub</h1>
+          <div class="text-xs text-gray-500">Shillong • Live results & predictions</div>
+        </div>
+      </div>
+      <div class="flex items-center gap-2">
+        <button id="darkToggle" class="p-2 rounded bg-white/80 dark:bg-gray-800">🌓</button>
+        <button id="menuBtn" class="p-2 rounded bg-white/80 dark:bg-gray-800 md:hidden">☰</button>
+      </div>
+    </header>
+
+    <main class="mt-4 space-y-4">
+      <!-- Countdown & Live -->
+      <section class="bg-white rounded-2xl p-4 shadow">
+        <div class="flex items-center justify-between">
+          <div>
+            <div class="text-xs text-gray-500">Next Draw</div>
+            <div id="nextLabel" class="font-bold text-lg">First Round — 4:00 PM</div>
+          </div>
+          <div id="countdown" class="font-extrabold text-3xl tracking-wide">--:--:--</div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3 mt-4">
+          <div class="p-3 bg-gray-50 rounded text-center">
+            <div class="text-xs uppercase text-gray-500">First Round</div>
+            <div id="fr" class="text-5xl font-extrabold mt-1">--</div>
+            <div id="frUpdated" class="text-xs text-gray-400 mt-1"></div>
+          </div>
+          <div class="p-3 bg-gray-50 rounded text-center">
+            <div class="text-xs uppercase text-gray-500">Second Round</div>
+            <div id="sr" class="text-5xl font-extrabold mt-1">--</div>
+            <div id="srUpdated" class="text-xs text-gray-400 mt-1"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Predictions -->
+      <section class="bg-white rounded-2xl p-4 shadow">
+        <div class="flex items-center justify-between mb-2">
+          <h2 class="font-bold text-primary">Predictions</h2>
+          <div class="text-xs text-gray-500">Based on last 90 days</div>
+        </div>
+        <div id="predCards" class="flex gap-3 overflow-x-auto"></div>
+      </section>
+
+      <!-- Dream Chart search -->
+      <section class="bg-white rounded-2xl p-4 shadow">
+        <div class="flex items-center justify-between mb-2">
+          <h2 class="font-bold">Dream Chart</h2>
+          <a href="/dreams" class="text-xs text-gray-500">Full Chart</a>
+        </div>
+        <input id="dreamSearch" placeholder="Search dream symbol or numbers" class="w-full p-2 rounded border" />
+        <div id="dreamPreview" class="mt-3 text-sm"></div>
+      </section>
+
+      <!-- Archive preview -->
+      <section class="bg-white rounded-2xl p-4 shadow">
+        <div class="flex items-center justify-between mb-2">
+          <h2 class="font-bold">Archive — Last 5 Days</h2>
+          <a href="/archive" class="text-xs text-gray-500">Open Archive</a>
+        </div>
+        <div id="archivePreview" class="text-sm"></div>
+      </section>
+    </main>
+
+    <footer class="mt-6 text-xs text-gray-500">
+      © <span id="year"></span> Teer Hub — Predictions are informational only.
+    </footer>
+  </div>
+
+<script src="./js/main.js"></script>
+</body>
+</html>
